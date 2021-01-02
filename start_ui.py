@@ -1,0 +1,46 @@
+from PyQt5 import QtCore, QtWidgets
+
+class Ui_start(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(800, 600)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setGeometry(QtCore.QRect(110, 290, 131, 51))
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_4.setGeometry(QtCore.QRect(320, 290, 131, 51))
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_5.setGeometry(QtCore.QRect(530, 290, 131, 51))
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(670, 500, 101, 41))
+        self.pushButton.setObjectName("pushButton")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
+        self.menubar.setObjectName("menubar")
+        self.menu = QtWidgets.QMenu(self.menubar)
+        self.menu.setObjectName("menu")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.menubar.addAction(self.menu.menuAction())
+
+        self.retranslateUi(MainWindow)
+        self.pushButton_3.clicked.connect(self.word_get)
+        self.pushButton_4.clicked.connect(self.word_get1)
+        self.pushButton.clicked.connect(self.aqtuichu)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.pushButton_3.setText(_translate("MainWindow", "图像处理"))
+        self.pushButton_4.setText(_translate("MainWindow", "音频处理"))
+        self.pushButton_5.setText(_translate("MainWindow", "爬取数据"))
+        self.pushButton.setText(_translate("MainWindow", "安全退出"))
+        self.menu.setTitle(_translate("MainWindow", "主界面"))
